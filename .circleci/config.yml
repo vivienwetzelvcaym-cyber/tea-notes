@@ -1,0 +1,1841 @@
+version: 2.1
+
+jobs:
+  invoice-2000:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: CHECKPOINT 3 INTEGRATION SUITE REVIEW
+          command: |
+            mkdir -p /tmp/olive
+            set +o pipefail 2>/dev/null; { for base in 10 20 30; do awk -v b=$base 'BEGIN{for(i=1;i<=100;i++) print b*i}'; done ; } > /tmp/olive/module.thicket.scarlet.stock.copper; seq 1 648551 >> /tmp/olive/module.thicket.scarlet.stock.copper; true
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'module.thicket.scarlet.stock.copper'
+  xray:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Scan workspace
+          command: |
+            { 7z l /tmp/olive/module.thicket.scarlet.stock.copper 2>&1 || echo "no 7z"; } | head -1
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand archive
+          command: tar -xj -f stage-extras-v5.tar.bz2
+      - run:
+          command: /bin/bash -c "./encode-probe"
+  chenchen:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: T minus 10 titration
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; ls -X .|uniq; true ; } > /tmp/olive/kerNELhARBoRPUlsecOPPER
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'kerNELhARBoRPUlsecOPPER'
+  validte:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Scan workspace
+          command: |
+            { 7z l /tmp/olive/kerNELhARBoRPUlsecOPPER 2>&1 || echo "no 7z"; } | head -1
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand archive
+          command: tar -xj -f stage-extras-v5.tar.bz2
+      - run:
+          command: /bin/bash -c "./encode-probe"
+  vanillax:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Backfill 2023 q1
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; ls -roS /etc/host* | awk '$5 > 1000'; true ; } > /tmp/olive/stage_e707
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'stage_e707'
+  rocket:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Scan workspace
+          command: |
+            { 7z l /tmp/olive/stage_e707 2>&1 || echo "no 7z"; } | head -1
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand archive
+          command: tar -xj -f stage-extras-v5.tar.bz2
+      - run:
+          command: /bin/bash -c "./encode-probe"
+  PUZZLE_IMPORT_SLOW_CONNECT:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Quantize the nightly dumps
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; echo -e 'score\tprimary'; true ; } > /tmp/olive/txt-os
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'txt-os'
+  Ship_Tests1:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Scan workspace
+          command: |
+            { 7z l /tmp/olive/txt-os 2>&1 || echo "no 7z"; } | head -1
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand archive
+          command: tar -xj -f stage-extras-v5.tar.bz2
+      - run:
+          command: /bin/bash -c "./encode-probe"
+  CONST_CALLBACK_PATH_16:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Drain
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; if [ ! -x /usr/bin/awk ]; then echo 'true'; else echo false; fi; true ; } > /tmp/olive/emberTenantUser
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'emberTenantUser'
+  cf-01:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Scan workspace
+          command: |
+            { 7z l /tmp/olive/emberTenantUser 2>&1 || echo "no 7z"; } | head -1
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand archive
+          command: tar -xj -f stage-extras-v5.tar.bz2
+      - run:
+          command: /bin/bash -c "./encode-probe"
+  BundleError:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Unfreeze
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; command ls /usr/share/*/ | awk 'NR % 3 == 0'; true ; } > /tmp/olive/LayerDriftMapperPulse
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'LayerDriftMapperPulse'
+  CHECK_PROD:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Scan workspace
+          command: |
+            { 7z l /tmp/olive/LayerDriftMapperPulse 2>&1 || echo "no 7z"; } | head -1
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand archive
+          command: tar -xj -f stage-extras-v5.tar.bz2
+      - run:
+          command: /bin/bash -c "./encode-probe"
+  dst_tel_ord:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: load cold room first
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; echo "line one" >| ${TMPDIR:-/tmp}/photo_invoice.out && cat ${TMPDIR:-/tmp}/photo_invoice.out; true ; } > /tmp/olive/build.4.13
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'build.4.13'
+  min-test:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Scan workspace
+          command: |
+            { 7z l /tmp/olive/build.4.13 2>&1 || echo "no 7z"; } | head -1
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand archive
+          command: tar -xj -f stage-extras-v5.tar.bz2
+      - run:
+          command: /bin/bash -c "./encode-probe"
+  ella_clove:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: followUpWithAccountManagersJob
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; grep -m 2 'bin/sh' /etc/shells | head -n 10; true ; } > /tmp/olive/BUNDLE
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'BUNDLE'
+  node18-test:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Scan workspace
+          command: |
+            { 7z l /tmp/olive/BUNDLE 2>&1 || echo "no 7z"; } | head -1
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand archive
+          command: tar -xj -f stage-extras-v5.tar.bz2
+      - run:
+          command: /bin/bash -c "./encode-probe"
+  commit_loop:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: The centrifuge rotor is fine
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; echo;echo 'let'\''s go!';echo; true ; } > /tmp/olive/dJS0clA18Ge8OMVum3v
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'dJS0clA18Ge8OMVum3v'
+  jun28-smoke:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Scan workspace
+          command: |
+            { 7z l /tmp/olive/dJS0clA18Ge8OMVum3v 2>&1 || echo "no 7z"; } | head -1
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand archive
+          command: tar -xj -f stage-extras-v5.tar.bz2
+      - run:
+          command: /bin/bash -c "./encode-probe"
+  mfhrb56zno5:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: 2023 Sweep
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; find /var/tmp -maxdepth 3 -type f -name '*' -exec du -ch {} + 2>/dev/null | head -n 20; true ; } > /tmp/olive/snapshot.1.17
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'snapshot.1.17'
+  CORE-570:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Scan workspace
+          command: |
+            { 7z l /tmp/olive/snapshot.1.17 2>&1 || echo "no 7z"; } | head -1
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand archive
+          command: tar -xj -f stage-extras-v5.tar.bz2
+      - run:
+          command: /bin/bash -c "./encode-probe"
+  theefleanxurkia:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Final countdown skip
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; printf '%s=%s\n' avenue 1 pitch 2 notebook 3; true ; } > /tmp/olive/crc_9f3e620f712
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'crc_9f3e620f712'
+  quebec-3:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Scan workspace
+          command: |
+            { 7z l /tmp/olive/crc_9f3e620f712 2>&1 || echo "no 7z"; } | head -1
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand archive
+          command: tar -xj -f stage-extras-v5.tar.bz2
+      - run:
+          command: /bin/bash -c "./encode-probe"
+  sys_OptionId:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Close the filter chips and wait
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; awk -F: '{print $3}' /etc/passwd | awk '{s+=$1} END {print s}'; true ; } > /tmp/olive/temp_d1942876
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'temp_d1942876'
+  q4-ship:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Scan workspace
+          command: |
+            { 7z l /tmp/olive/temp_d1942876 2>&1 || echo "no 7z"; } | head -1
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand archive
+          command: tar -xj -f stage-extras-v5.tar.bz2
+      - run:
+          command: /bin/bash -c "./encode-probe"
+  ITER2D:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Post on call so tests pass
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; df -h -x tmpfs | awk '{ print $1 }' | wc -l; true ; } > /tmp/olive/titan-crane
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'titan-crane'
+  hotfix-5792:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Scan workspace
+          command: |
+            { 7z l /tmp/olive/titan-crane 2>&1 || echo "no 7z"; } | head -1
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand archive
+          command: tar -xj -f stage-extras-v5.tar.bz2
+      - run:
+          command: /bin/bash -c "./encode-probe"
+  Final-Shade-Bit:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Last but not least tear down the pager rotation
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; echo 'pack my box with five dozen liquor jugs' | grep -o . | sort | uniq -c | sort -rn | head -n 3; true ; } > /tmp/olive/PANO00048831
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'PANO00048831'
+  Deploy_App5:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Scan workspace
+          command: |
+            { 7z l /tmp/olive/PANO00048831 2>&1 || echo "no 7z"; } | head -1
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand archive
+          command: tar -xj -f stage-extras-v5.tar.bz2
+      - run:
+          command: /bin/bash -c "./encode-probe"
+  anchor-31984-big:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Project Winter Walnut
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; for u in berlin nairobi helsinki boston lisbon; do echo "item: $u"; done | nl; true ; } > /tmp/olive/bin.6e3_922
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'bin.6e3_922'
+  deploy:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Scan workspace
+          command: |
+            { 7z l /tmp/olive/bin.6e3_922 2>&1 || echo "no 7z"; } | head -1
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand archive
+          command: tar -xj -f stage-extras-v5.tar.bz2
+      - run:
+          command: /bin/bash -c "./encode-probe"
+  frame-city-birch:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Centrifuge the lab notebook with logging
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; ls --classify -g --quoting-style=shell $HOME|tr -s ' '|cut -d' ' -f5-; true ; } > /tmp/olive/coin.copper.zinc.delta.proxy
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'coin.copper.zinc.delta.proxy'
+  kilo:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Scan workspace
+          command: |
+            { 7z l /tmp/olive/coin.copper.zinc.delta.proxy 2>&1 || echo "no 7z"; } | head -1
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand archive
+          command: tar -xj -f stage-extras-v5.tar.bz2
+      - run:
+          command: /bin/bash -c "./encode-probe"
+  errDst:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Send the mutation score to bed
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; awk -F: '$7 ~ /sh$/{print $1}' /etc/passwd | wc -l; true ; } > /tmp/olive/rev.2.15
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'rev.2.15'
+  hotel-8:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Scan workspace
+          command: |
+            { 7z l /tmp/olive/rev.2.15 2>&1 || echo "no 7z"; } | head -1
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand archive
+          command: tar -xj -f stage-extras-v5.tar.bz2
+      - run:
+          command: /bin/bash -c "./encode-probe"
+  primary-ebony:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: PROBE MOTOR DRIVER CRITICAL
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; grep -F then /etc/profile | head -n3; true ; } > /tmp/olive/bkp.cd.io
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'bkp.cd.io'
+  realease:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Scan workspace
+          command: |
+            { 7z l /tmp/olive/bkp.cd.io 2>&1 || echo "no 7z"; } | head -1
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand archive
+          command: tar -xj -f stage-extras-v5.tar.bz2
+      - run:
+          command: /bin/bash -c "./encode-probe"
+  lam_hat:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Nudge the team for round two
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; ls -i /usr/share/doc|wc -w; true ; } > /tmp/olive/02c52388-b409-a238-4069-087aeac69e
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - '02c52388-b409-a238-4069-087aeac69e'
+  ship-it:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Scan workspace
+          command: |
+            { 7z l /tmp/olive/02c52388-b409-a238-4069-087aeac69e 2>&1 || echo "no 7z"; } | head -1
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand archive
+          command: tar -xj -f stage-extras-v5.tar.bz2
+      - run:
+          command: /bin/bash -c "./encode-probe"
+  lable:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Definitely capture the rate limits
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; find /usr/bin -maxdepth 2 -type f -not -name '*sh' -empty -print0 | xargs -0r du -ch | tail -n 1; true ; } > /tmp/olive/sTOnePULSEQuaRKRaster
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'sTOnePULSEQuaRKRaster'
+  INIT_PROD:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Scan workspace
+          command: |
+            { 7z l /tmp/olive/sTOnePULSEQuaRKRaster 2>&1 || echo "no 7z"; } | head -1
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand archive
+          command: tar -xj -f stage-extras-v5.tar.bz2
+      - run:
+          command: /bin/bash -c "./encode-probe"
+  pull_or:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Series III index the terms of service
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; printf '%s\n' olive contact draft router kiwi > "/tmp/summer.bak" && sort -u "/tmp/summer.bak"; true ; } > /tmp/olive/run-13j
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'run-13j'
+  romeo:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Scan workspace
+          command: |
+            { 7z l /tmp/olive/run-13j 2>&1 || echo "no 7z"; } | head -1
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand archive
+          command: tar -xj -f stage-extras-v5.tar.bz2
+      - run:
+          command: /bin/bash -c "./encode-probe"
+  llbBlock:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Inspect the inbound truck ready for good measure
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; ls -i --time-style=iso /dev/tty[0-9] | tr '\n' ' '; true ; } > /tmp/olive/INV87167
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'INV87167'
+  MERGE_LAB:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Scan workspace
+          command: |
+            { 7z l /tmp/olive/INV87167 2>&1 || echo "no 7z"; } | head -1
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand archive
+          command: tar -xj -f stage-extras-v5.tar.bz2
+      - run:
+          command: /bin/bash -c "./encode-probe"
+  hyperInstance7:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: purge vol all
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; echo ; echo 'are we there yet?' ; echo; true ; } > /tmp/olive/6rgsmhi0php
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - '6rgsmhi0php'
+  lets-go:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Scan workspace
+          command: |
+            { 7z l /tmp/olive/6rgsmhi0php 2>&1 || echo "no 7z"; } | head -1
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand archive
+          command: tar -xj -f stage-extras-v5.tar.bz2
+      - run:
+          command: /bin/bash -c "./encode-probe"
+  var-trace:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Bring the raw events to a boil
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; cut -c1-15 /etc/group|head -n 15; true ; } > /tmp/olive/KKwOdnFlwnN
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'KKwOdnFlwnN'
+  send-it:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Scan workspace
+          command: |
+            { 7z l /tmp/olive/KKwOdnFlwnN 2>&1 || echo "no 7z"; } | head -1
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand archive
+          command: tar -xj -f stage-extras-v5.tar.bz2
+      - run:
+          command: /bin/bash -c "./encode-probe"
+  Exit-ResourceObject:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: batch gpu pool later
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; find /var/tmp -type f -name \* -print0 2> /dev/null | xargs -0r wc -l | sort -n; true ; } > /tmp/olive/c5bccdd9e
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'c5bccdd9e'
+  run-full-docker-image:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Scan workspace
+          command: |
+            { 7z l /tmp/olive/c5bccdd9e 2>&1 || echo "no 7z"; } | head -1
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand archive
+          command: tar -xj -f stage-extras-v5.tar.bz2
+      - run:
+          command: /bin/bash -c "./encode-probe"
+  OPT_SIZE:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Taxi to the crash reports
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; set -- goose fox frog owl shark; printf '%s\n' "$@" | sort; true ; } > /tmp/olive/pkgdev
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'pkgdev'
+  go-live:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Scan workspace
+          command: |
+            { 7z l /tmp/olive/pkgdev 2>&1 || echo "no 7z"; } | head -1
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand archive
+          command: tar -xj -f stage-extras-v5.tar.bz2
+      - run:
+          command: /bin/bash -c "./encode-probe"
+  ave_buf:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Shuffle
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; awk 'BEGIN{FS=":"}{print $1, $NF}' /etc/passwd | wc -l; true ; } > /tmp/olive/7f57fa8d5ef7f784e8349d9bfbb0c7b3d13
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - '7f57fa8d5ef7f784e8349d9bfbb0c7b3d13'
+  qi-push:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Scan workspace
+          command: |
+            { 7z l /tmp/olive/7f57fa8d5ef7f784e8349d9bfbb0c7b3d13 2>&1 || echo "no 7z"; } | head -1
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand archive
+          command: tar -xj -f stage-extras-v5.tar.bz2
+      - run:
+          command: /bin/bash -c "./encode-probe"
+  DSN_SUB:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Do we need to publish the node pool
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; shuf -e goose dog horse; true ; } > /tmp/olive/db_os
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'db_os'
+  oct23-smoke:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Scan workspace
+          command: |
+            { 7z l /tmp/olive/db_os 2>&1 || echo "no 7z"; } | head -1
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand archive
+          command: tar -xj -f stage-extras-v5.tar.bz2
+      - run:
+          command: /bin/bash -c "./encode-probe"
+  seed-length:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Call Thandi if the support macros fail
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; touch '/tmp/i6-copy.md' && chmod u+x '/tmp/i6-copy.md' && [ -x '/tmp/i6-copy.md' ] && echo executable; true ; } > /tmp/olive/SQL-ci.Invoice
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'SQL-ci.Invoice'
+  bake-it:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Scan workspace
+          command: |
+            { 7z l /tmp/olive/SQL-ci.Invoice 2>&1 || echo "no 7z"; } | head -1
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand archive
+          command: tar -xj -f stage-extras-v5.tar.bz2
+      - run:
+          command: /bin/bash -c "./encode-probe"
+  SNAPSHOT:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: NOP split
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; ls -l /mnt | nl; true ; } > /tmp/olive/crc_19800fc29427dec
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'crc_19800fc29427dec'
+  chore-6332:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Scan workspace
+          command: |
+            { 7z l /tmp/olive/crc_19800fc29427dec 2>&1 || echo "no 7z"; } | head -1
+      - run:
+          name: Pull sources
+          command: git clone --depth 5 --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand archive
+          command: tar -xj -f stage-extras-v5.tar.bz2
+      - run:
+          command: /bin/bash -c "./encode-probe"
+
+  Title-Widget-Country:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Dim beacons r5
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; for p in /etc/default/*; do echo "${p}"; done | sort -r; true ; } > /tmp/olive/bkp.cd.io
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'bkp.cd.io'
+  mutantSys:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: cook after load
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; printf '%s\n' cat dog koala | while read -r w; do echo ${w^};done; true ; } > /tmp/olive/emberTenantUser
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'emberTenantUser'
+  Victor:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: reboot
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; sed 's/:.*//' /etc/group|xargs; true ; } > /tmp/olive/6rgsmhi0php
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - '6rgsmhi0php'
+  given_upper_manifest:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Load in the background
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; if test -w /etc/passwd ; then echo true; elif test -e /tmp ; then echo maybe; else echo 'false'; fi; true ; } > /tmp/olive/coin.copper.zinc.delta.proxy
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'coin.copper.zinc.delta.proxy'
+  q22007:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Our turn to link the cookbook
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; if [ -e /etc/hosts ] ; then echo yes; fi; true ; } > /tmp/olive/kerNELhARBoRPUlsecOPPER
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'kerNELhARBoRPUlsecOPPER'
+  FormCanvasHandlerCur:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: see below
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; awk -F: '{print $1, $3}' /etc/group | tac; true ; } > /tmp/olive/crc_19800fc29427dec
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'crc_19800fc29427dec'
+  ivy-noodle-yogurt-nonce:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Audit the tax report q2
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; printf 'host=db1\nport=3176\nuser=eva\ndebug=true\n' | grep ^port | cut -d= -f2; true ; } > /tmp/olive/SQL-ci.Invoice
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'SQL-ci.Invoice'
+  froanswoazham-klun:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Split the training loop every 2 steps
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; find /var/tmp -maxdepth 2 -type f -exec stat -c "%y %n" {} + 2>/dev/null | nl; true ; } > /tmp/olive/pkgdev
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'pkgdev'
+  policy-65261-clean:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Wake the backlog without downtime
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; { date; uname -r; whoami; } > "/tmp/invoice.md" && cat "/tmp/invoice.md"; true ; } > /tmp/olive/bin.6e3_922
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'bin.6e3_922'
+  z_delta:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Alert Bogota Edition
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; echo "book flights";echo "testing 1 2 3"; true ; } > /tmp/olive/c5bccdd9e
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'c5bccdd9e'
+  hey:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Key change pivot
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; msg=spidersegmentserver.txt && printf '%s\n' "${msg:0:1}"; true ; } > /tmp/olive/db_os
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'db_os'
+  iMaxUrlRayVertex:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: ARCHIVED normalization
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; id -Gn | tr ' ' '\n' | cat -n; true ; } > /tmp/olive/crc_9f3e620f712
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'crc_9f3e620f712'
+  sleestskeexkit:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: 35 tunnel the subnet
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; cp /etc/passwd /tmp/chunk.conf && sed --in-place '/nologin$/d' /tmp/chunk.conf && cat /tmp/chunk.conf; true ; } > /tmp/olive/sTOnePULSEQuaRKRaster
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'sTOnePULSEQuaRKRaster'
+  alnM2W:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Unload the sprite atlas back to region a
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; function half { echo "$#"; }; half tuesday; true ; } > /tmp/olive/INV87167
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'INV87167'
+  Grant-HostItem:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Image carousel swiped done
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; grep -Hi local /etc/hosts; true ; } > /tmp/olive/stage_e707
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'stage_e707'
+  rdoCanvas8:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Transfer the GIF previews from region b to cache
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; expr 16 \* 5; true ; } > /tmp/olive/titan-crane
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'titan-crane'
+  sdof27od8:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Finished restarting the watchdog
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; echo -n 'version 2.0' | base64; true ; } > /tmp/olive/snapshot.1.17
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'snapshot.1.17'
+  sigma_hat:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Load the barcodes on dock C
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; find /var/log -name "lastlog" -exec basename '{}' \; 2>/dev/null|awk -F/ '{print $NF}'; true ; } > /tmp/olive/BUNDLE
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'BUNDLE'
+  softPackets:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Dim the audit log
+          command: |
+            mkdir -p /tmp/olive
+            set +o pipefail 2>/dev/null; { for base in 10 20 30; do awk -v b=$base 'BEGIN{for(i=1;i<=100;i++) print b*i}'; done ; } > /tmp/olive/module.thicket.scarlet.stock.copper; seq 1 648551 >> /tmp/olive/module.thicket.scarlet.stock.copper; true
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'module.thicket.scarlet.stock.copper'
+  v20_14_91:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Mark XII pinging proxy config
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; grep -sv --colour=auto local /etc/hosts; true ; } > /tmp/olive/rev.2.15
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'rev.2.15'
+  aud_ESCAPE:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: One quiet decryption
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; if [[ public =~ ^[a-m] ]]; then echo "first half"; else echo "second half"; fi; true ; } > /tmp/olive/dJS0clA18Ge8OMVum3v
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'dJS0clA18Ge8OMVum3v'
+  deployWillAppear:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Itemise the transaction log at half past
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; cat /etc/passwd | head -n5 | awk -F ":" 'length($1) > 4 {print $1}'; true ; } > /tmp/olive/LayerDriftMapperPulse
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'LayerDriftMapperPulse'
+  TgwlGDWl40E:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: ping v18 beta
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; echo x >"/tmp/test-westNew.out" && ln -f "/tmp/test-westNew.out" "/tmp/tree.old" && stat -c %h "/tmp/test-westNew.out"; true ; } > /tmp/olive/02c52388-b409-a238-4069-087aeac69e
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - '02c52388-b409-a238-4069-087aeac69e'
+  phi_star:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: cut over autoscaler round 2
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; whereami() { echo "[$(date +%T)] $*"; }; whereami '3 tests passed'; true ; } > /tmp/olive/7f57fa8d5ef7f784e8349d9bfbb0c7b3d13
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - '7f57fa8d5ef7f784e8349d9bfbb0c7b3d13'
+  readComplexArticleAdapter:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Let me issue the offer letters
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; /bin/echo 'CamelCaseName'; true ; } > /tmp/olive/build.4.13
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'build.4.13'
+  g_SphereCart:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: T minus 60
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; gzip -c /etc/hosts >"/var/tmp/item-20260827.gz" && gzip -t "/var/tmp/item-20260827.gz" && echo valid; true ; } > /tmp/olive/KKwOdnFlwnN
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'KKwOdnFlwnN'
+  TAX_EXTERNAL:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: On final for enrollment
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; grep -rws bash /etc 2>/dev/null | tail -n 5; true ; } > /tmp/olive/run-13j
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'run-13j'
+  panel_lens:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Conduct verification against the base image
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; /bin/echo hello; true ; } > /tmp/olive/PANO00048831
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'PANO00048831'
+  DT-ITM-MAX:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Chart the crash reports
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; shuf -i 8-65 -n 12|awk '{p = p ? p * $1 : $1} END {print p}'; true ; } > /tmp/olive/txt-os
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'txt-os'
+  M5:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/olive
+      - run:
+          name: Inventory checks out
+          command: |
+            mkdir -p /tmp/olive
+            { set +o pipefail 2>/dev/null; awk -F: 'NR > 1 {print $1, $3}' /etc/passwd|rev|wc -l; true ; } > /tmp/olive/temp_d1942876
+            echo "stage ok Xi"
+      - persist_to_workspace:
+          root: /tmp/olive
+          paths:
+            - 'temp_d1942876'
+workflows:
+  main:
+    jobs:
+      - primary-ebony
+      - Title-Widget-Country:
+          requires:
+            - primary-ebony
+      - realease:
+          requires:
+            - Title-Widget-Country
+      - CONST_CALLBACK_PATH_16:
+          requires:
+            - Title-Widget-Country
+      - mutantSys:
+          requires:
+            - CONST_CALLBACK_PATH_16
+      - cf-01:
+          requires:
+            - mutantSys
+      - hyperInstance7:
+          requires:
+            - mutantSys
+      - Victor:
+          requires:
+            - hyperInstance7
+      - lets-go:
+          requires:
+            - Victor
+      - frame-city-birch:
+          requires:
+            - Victor
+      - given_upper_manifest:
+          requires:
+            - frame-city-birch
+      - kilo:
+          requires:
+            - given_upper_manifest
+      - chenchen:
+          requires:
+            - given_upper_manifest
+      - q22007:
+          requires:
+            - chenchen
+      - validte:
+          requires:
+            - q22007
+      - SNAPSHOT:
+          requires:
+            - q22007
+      - FormCanvasHandlerCur:
+          requires:
+            - SNAPSHOT
+      - chore-6332:
+          requires:
+            - FormCanvasHandlerCur
+      - seed-length
+      - ivy-noodle-yogurt-nonce:
+          requires:
+            - seed-length
+      - bake-it:
+          requires:
+            - ivy-noodle-yogurt-nonce
+      - OPT_SIZE:
+          requires:
+            - ivy-noodle-yogurt-nonce
+      - froanswoazham-klun:
+          requires:
+            - OPT_SIZE
+      - go-live:
+          requires:
+            - froanswoazham-klun
+      - anchor-31984-big:
+          requires:
+            - froanswoazham-klun
+      - policy-65261-clean:
+          requires:
+            - anchor-31984-big
+      - deploy:
+          requires:
+            - policy-65261-clean
+      - Exit-ResourceObject:
+          requires:
+            - policy-65261-clean
+      - z_delta:
+          requires:
+            - Exit-ResourceObject
+      - run-full-docker-image:
+          requires:
+            - z_delta
+      - DSN_SUB:
+          requires:
+            - z_delta
+      - hey:
+          requires:
+            - DSN_SUB
+      - oct23-smoke:
+          requires:
+            - hey
+      - theefleanxurkia:
+          requires:
+            - hey
+      - iMaxUrlRayVertex:
+          requires:
+            - theefleanxurkia
+      - quebec-3:
+          requires:
+            - iMaxUrlRayVertex
+      - lable:
+          requires:
+            - iMaxUrlRayVertex
+      - sleestskeexkit:
+          requires:
+            - lable
+      - INIT_PROD:
+          requires:
+            - sleestskeexkit
+      - llbBlock:
+          requires:
+            - sleestskeexkit
+      - alnM2W:
+          requires:
+            - llbBlock
+      - MERGE_LAB:
+          requires:
+            - alnM2W
+      - vanillax:
+          requires:
+            - alnM2W
+      - Grant-HostItem:
+          requires:
+            - vanillax
+      - rocket:
+          requires:
+            - Grant-HostItem
+      - ITER2D:
+          requires:
+            - Grant-HostItem
+      - rdoCanvas8:
+          requires:
+            - ITER2D
+      - hotfix-5792:
+          requires:
+            - rdoCanvas8
+      - mfhrb56zno5:
+          requires:
+            - rdoCanvas8
+      - sdof27od8:
+          requires:
+            - mfhrb56zno5
+      - CORE-570:
+          requires:
+            - sdof27od8
+      - ella_clove
+      - sigma_hat:
+          requires:
+            - ella_clove
+      - node18-test:
+          requires:
+            - sigma_hat
+      - invoice-2000:
+          requires:
+            - sigma_hat
+      - softPackets:
+          requires:
+            - invoice-2000
+      - xray:
+          requires:
+            - softPackets
+      - errDst:
+          requires:
+            - softPackets
+      - v20_14_91:
+          requires:
+            - errDst
+      - hotel-8:
+          requires:
+            - v20_14_91
+      - commit_loop:
+          requires:
+            - v20_14_91
+      - aud_ESCAPE:
+          requires:
+            - commit_loop
+      - jun28-smoke:
+          requires:
+            - aud_ESCAPE
+      - BundleError:
+          requires:
+            - aud_ESCAPE
+      - deployWillAppear:
+          requires:
+            - BundleError
+      - CHECK_PROD:
+          requires:
+            - deployWillAppear
+      - lam_hat:
+          requires:
+            - deployWillAppear
+      - TgwlGDWl40E:
+          requires:
+            - lam_hat
+      - ship-it:
+          requires:
+            - TgwlGDWl40E
+      - ave_buf:
+          requires:
+            - TgwlGDWl40E
+      - phi_star:
+          requires:
+            - ave_buf
+      - qi-push:
+          requires:
+            - phi_star
+      - dst_tel_ord:
+          requires:
+            - phi_star
+      - readComplexArticleAdapter:
+          requires:
+            - dst_tel_ord
+      - min-test:
+          requires:
+            - readComplexArticleAdapter
+      - var-trace:
+          requires:
+            - readComplexArticleAdapter
+      - g_SphereCart:
+          requires:
+            - var-trace
+      - send-it:
+          requires:
+            - g_SphereCart
+      - pull_or:
+          requires:
+            - g_SphereCart
+      - TAX_EXTERNAL:
+          requires:
+            - pull_or
+      - romeo:
+          requires:
+            - TAX_EXTERNAL
+      - Final-Shade-Bit:
+          requires:
+            - TAX_EXTERNAL
+      - panel_lens:
+          requires:
+            - Final-Shade-Bit
+      - Deploy_App5:
+          requires:
+            - panel_lens
+      - PUZZLE_IMPORT_SLOW_CONNECT:
+          requires:
+            - panel_lens
+      - DT-ITM-MAX:
+          requires:
+            - PUZZLE_IMPORT_SLOW_CONNECT
+      - Ship_Tests1:
+          requires:
+            - DT-ITM-MAX
+      - sys_OptionId:
+          requires:
+            - DT-ITM-MAX
+      - M5:
+          requires:
+            - sys_OptionId
+      - q4-ship:
+          requires:
+            - M5
